@@ -1,4 +1,62 @@
-strip().lower()
+import time
+
+# Welcome
+print("Welcome to the x-quiz, which you will be test out your mathematical ablity. Are you excited?")
+time.sleep(2)
+
+# Call and Name
+name = input("What is your name")
+while not name.isalpha():
+  print("Please only enter your name in letter")
+  time.sleep(2)
+  name = input("What is your name")
+time.sleep(2)
+call = input("What do you want us to call you")
+while not call.isalpha():
+  print("Do you want to have letters in your call?")
+  time.sleep(2)
+  call = input("What do you want us to call you")
+
+print("Hello {} {}, welcome to our game".format(call, name))
+
+point = 0
+
+# Functions
+# If the user got selected a choice that is not in letters during junior division or the first question in senior division, they will be notfied that and they will need to reenter the value.
+def explain():
+  print("This is not a valid solution, please only select number")
+# If the user got selected a choice that is not the required alphabet, they will be notified by this and they will need to reenter the value.
+def letter():
+  print("Please only select between the choice of a,b,c,d")
+# If they got it correct in the first ten questions of either division, they will get one point added.
+def correct_point_easy():
+  global point
+  point += 1
+# If they got it correct in the last ten questions, they will get two points added.
+def correct_point_hard():
+  global point
+  point += 2
+# If they got any question wrong, they will not get any points.
+def wrong_point():
+  global point
+  point += 0
+# This is the only possible question in question that involves choice.
+def a_valid_solution():
+  ["a","b","c","d"]
+
+# Junior quiz function
+def junior_quiz():
+  junior_1 = input(question_list_junior[0]).strip().lower()
+  while not junior_1.isalpha():
+    explain()
+  while junior_1 not in a_valid_solution():
+    letter()
+  if junior_1 == "c":
+    correct_point_easy()
+  else:
+    correct_point_hard()
+    
+  junior_2 = input(question_list_junior[1]).strip().lower()
   while not junior_2.isalpha():
     explain()
     junior_2 = input(question_list_junior[1]).strip().lower()
@@ -233,8 +291,30 @@ strip().lower()
 
 # Question in senior division
 def senior_division():
-  senior_1 = input("What is the name of the line that only got one intercept to a graph?")
-  
+  senior_1 = input(question_list_senior[0]).strip().lower()
+  while not senior_1.isalpha():
+    explain()
+    senior_1 = input(question_list_senior[0]).strip().lower()
+  while senior_1 not in a_valid_solution():
+    letter()
+    senior_1 = input(question_list_senior[0]).strip().lower()
+  if senior_1 == "a":
+    correct_point_easy()
+  else:
+    wrong_point()
+
+  senior_2 = input(question_list_senior[1]).strip().lower()
+  while not senior_2.isalpha():
+    explain()
+    senior_2 = input(question_list_senior[1]).strip().lower()
+  while senior_2 not in a_valid_solution():
+    letter()
+    senior_2 = input(question_list_senior[1]).strip().lower()
+  if senior_2 == "a":
+    correct_point_easy()
+  else:
+    wrong_point()
+    
   senior_quizbank = ["senior_1","senior_2","senior_3","senior_4","senior_5","senior_6","senior_7","senior_8","senior_9","senior_10","senior_11","senior_12","senior_13","senior_14","senior_15","senior_16","senior_17","senior_18","senior_19","senior_20"]
 
 # Asking for their age to then allocate them into different division.
@@ -263,8 +343,9 @@ elif age > 18:
   print("You are too old to attend this quiz")
   exit()
   
-# Simple junior questions, only worth one marks
-question_list_junior = ["What is 3 * 5 + 4? a)32 b)27 c)19", #1
+# The quizs
+  # Simple questions, only worth one marks
+question_list_junior = ["What is 3 * 5 + 4? a)32 b)27 c)19 d)23", #1
                        "What is the sum of angle in a triangle? a)180 b)90 c)270 d)360?", #2
                        """Which of the following statement is correct? 
                    a)Angles in a square sum to 360 degrees
@@ -284,6 +365,51 @@ question_list_junior = ["What is 3 * 5 + 4? a)32 b)27 c)19", #1
                     b)Opposite side over hypotenuse side
                     c)adjacent side over hypotenuse side
                     d)adjacent side over the opposite side"""] #10
+
+question_list_senior = ["""What is the FORMAL definition of ellipse?
+                        a)It has the same distance towards two focus from a certain point
+                        b)The sum of the distance among two focus is 2a
+                        c)The sum of the two focus is 2a
+                        d)It has the same distance between two focus towards the center""",
+                        """What is the FORMAL definition of parabola?
+                        a)The distance between its focus and directrix toward the vertex is the same
+                        b)The distance from a fixed point have the same distance towards the focus and directrix.
+                        c)Vertex have to located at the origin
+                        d)If the equation is y^2 = 4ax and the vertex is located on the center, the focus is located on (2a,0) and (-2a,0)""",
+                        "What is the first deriative of function f(x)=2x^2? a)4x b)2x c)2x^2 d)4",
+                        """If we are taking the deriative of a fraction, which method shall we apply?
+                        a)Chain Rule
+                        b)Product Rule
+                        c)Quotient Rule
+                        d)Number Rule""",
+                        """If we are taking the deriative of a composite function, which method shall we apply?
+                        a)Chain Rule
+                        b)Product Rule
+                        c)Quotient Rule
+                        d)Number Rule""",
+                       """What is a method we can use to calculate the equation of tangent line to a circle?
+                        a)Implict differentation
+                        b)Partial differentation
+                        c)Algebraic differentation
+                        d)Integration""",
+                       """if z = a+bi, what is the value of z^2 if a = 2 and b = 1?
+                       a)3+4i
+                       b)4+3i
+                       c)4-3i
+                       d)3-4i""",
+                       """What is sin(x+y)?
+                       a)sin(x)cos(y)-cos(x)sin(y)
+                       b)sin(x)sin(y)+cos(x)cos(y)
+                       c)sin(x)cos(y)+cos(x)sin(y)
+                       d)sin(x)sin(y)-cos(x)cos(y)""",
+                       """What is In(-1)? Plese give in a complex solution
+                       a)i(pi)
+                       b)-i
+                       c)-i(pi)
+                       d)ei"""]
+                        
+                        
+                        
 
 # Those part of questions have a higher difficulties than the other question.
 question_list_juniorplus = ["""What is a unit circle?
@@ -313,6 +439,18 @@ question_list_juniorplus = ["""What is a unit circle?
                            c)X-intercept
                            d)Rise/Run""",
                            "What is the gradient of line y = x+3 a)1 b)2 c)3 d)-1"]
+
+# This need an input
+question_list_seniorplus = ["Calculate the deriative of 2(x-5)^2",
+                           "Calculate the deriative of (x^2 - 3) / x+5",
+                           "Calculate the integral from 0 to 1, 2x dx",
+                           "Is f(x) = 12x + x^2 a maximum or a minimum? Please enter your value in max or min",
+                           "Calculate the value of the X-COORDINATE of the focus in the equation of parabola y^2 = 8x",
+                           "Calculate the vertex of the hyperbola in the equation 4x^2 - 9y^2 = 36. You just need to have one answer",
+                           "If Z = 1.56, calculate the value of p(x) in the normal distribution",
+                           "Please write the equation of the parabola if it has the x-intercept at -3 and 3. PLEASE WRITE THEM in terms of y",
+                           "Solve the x in exponetial equation of 3^(x-5) = 81",
+                           "Calculate the value of log 20 + log 5, leave this as a number."]
                     
 
   
