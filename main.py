@@ -1,7 +1,13 @@
 import time
+import random
 
 # Welcome
 print("Welcome to the x-quiz, which you will be test out your mathematical ablity. Are you excited?")
+print("---------------------------------------------------------------------------")
+time.sleep(2)
+print("You will only be notified in your answer if you entered an invalid case. All other time, it will automatically jump to the next question")
+time.sleep(2)
+print("There are 15 questions for you to ask, some are hard, and some are easy. Hard questions are worth 2 points whereas easy question only worth 1 point. The question will be given to you randomly.")
 time.sleep(2)
 
 # Call and Name
@@ -43,6 +49,117 @@ def wrong_point():
 # This is the only possible question in question that involves choice.
 def a_valid_solution():
   ["a","b","c","d"]
+
+# The questions
+  # Simple questions, only worth one marks
+question_list_junior = ["What is 3 * 5 + 4? a)32 b)27 c)19 d)23", #1
+                       "What is the sum of angle in a triangle? a)180 b)90 c)270 d)360?", #2
+                       """Which of the following statement is correct? 
+                   a)Angles in a square sum to 360 degrees
+                   b)Angles in a circle sum to 180 degrees
+                   c)Vertically opposite angles sum to 180 degrees
+                   d)Shapes with two side are called a triangle""", #3
+                       "What is 10 squared? a)10 b)20 c)1 d)100", #4
+                       """Which of them is first in calculations?
+                   a)Multiplication and Division
+                   b)Addition and Subtraction""", #5
+                       "What is the longest side in a right angle triangle? a)adjacent b)hypotenuse c)opposite d)I am not sure", #6
+                       "What is the highest power in a linear function? a)1 b)2 c)3 d)4", # 7
+                       "What is square root of 4? a)2 b)4 c)-2 d)-4", # 8
+                       "What is sine 30 degrees? a)0.5 b)1 c)sqrt(2)/3 d)0", # 9
+                       """What is the definition of sine?
+                    a)Opposite side over adjacent side
+                    b)Opposite side over hypotenuse side
+                    c)adjacent side over hypotenuse side
+                    d)adjacent side over the opposite side"""] #10
+
+question_list_senior = ["""What is the FORMAL definition of ellipse?
+                        a)It has the same distance towards two focus from a certain point
+                        b)The sum of the distance among two focus is 2a
+                        c)The sum of the two focus is 2a
+                        d)It has the same distance between two focus towards the center""",
+                        """What is the FORMAL definition of parabola?
+                        a)The distance between its focus and directrix toward the vertex is the same
+                        b)The distance from a fixed point have the same distance towards the focus and directrix.
+                        c)Vertex have to located at the origin
+                        d)If the equation is y^2 = 4ax and the vertex is located on the center, the focus is located on (2a,0) and (-2a,0)""",
+                        "What is the first deriative of function f(x)=2x^2? a)4x b)2x c)2x^2 d)4",
+                        """If we are taking the deriative of a fraction, which method shall we apply?
+                        a)Chain Rule
+                        b)Product Rule
+                        c)Quotient Rule
+                        d)Number Rule""",
+                        """If we are taking the deriative of a composite function, which method shall we apply?
+                        a)Chain Rule
+                        b)Product Rule
+                        c)Quotient Rule
+                        d)Number Rule""",
+                       """What is a method we can use to calculate the equation of tangent line to a circle?
+                        a)Implict differentation
+                        b)Partial differentation
+                        c)Algebraic differentation
+                        d)Integration""",
+                       """if z = a+bi, what is the value of z^2 if a = 2 and b = 1?
+                       a)3+4i
+                       b)4+3i
+                       c)4-3i
+                       d)3-4i""",
+                       """What is sin(x+y)?
+                       a)sin(x)cos(y)-cos(x)sin(y)
+                       b)sin(x)sin(y)+cos(x)cos(y)
+                       c)sin(x)cos(y)+cos(x)sin(y)
+                       d)sin(x)sin(y)-cos(x)cos(y)""",
+                       """What is In(-1)? Plese give in a complex solution
+                       a)i(pi)
+                       b)-i
+                       c)-i(pi)
+                       d)ei""",
+                       """What is 180/(pi) always referred to?
+                        a)1 Rad
+                        b)2 Rad
+                        c)3 Rad
+                        d)4 Rad"""]
+
+# Those part of questions have a higher difficulties than the other question.
+question_list_juniorplus = ["""What is a unit circle?
+                             a)Circle with no radiys
+                             b)Circle with a radius of 1
+                             c)Circle with a center at the origin
+                             d)Circle with a radius of 1""",
+                            "How many degrees is in pi? a)180 b)360 c)90 d)0",
+                            """Solve for x is x^2 = -4?
+                            a)-2 b)No real solution c)2 d)2""",
+                            """What is the formal definition of circle?
+                           a)The shape that has the same distance between its circumference and center
+                           b)A shape that has 360 degrees
+                           c)A roundy shape
+                           d)A shape that has the same distance between its focus and directrix.""",
+                           """What is the same as x square root?
+                           a)x to the power of 1/2
+                           b)x to the power of 1/3
+                           c)x to the power of 2
+                           d)x to the power of -1""",
+                           "What is the tangent 90 degrees? a)0 b)1 c)-1 d)Not Exist",
+                           "What is log 10? a)1 b)0 c)10 d)-1",
+                           "What is In e? a)1 b)0 c)10 d)-1",
+                           """What is m mean in a linear equation of y = mx+c?
+                           a)Gradient
+                           b)Y-intercept
+                           c)X-intercept
+                           d)Rise/Run""",
+                           "What is the gradient of line y = x+3 a)1 b)2 c)3 d)-1"]
+
+# This need an input
+question_list_seniorplus = ["Calculate the deriative of 2(x-5)^2",
+                           "Calculate the deriative of (x+5) / (x-2)",
+                           "Calculate the integral from 0 to 1, 2x dx",
+                           "Is f(x) = 12x + x^2 a maximum or a minimum? Please enter your value in max or min",
+                           "Calculate the value of the X-COORDINATE of the focus in the equation of parabola y^2 = 8x",
+                           "Calculate the x-coordinate of the vertex of the hyperbola in the equation 4x^2 - 9y^2 = 36. You just need to have one answer",
+                           "If Z = 1.56, calculate the value of p(x) in the normal distribution, left it in 2 digits",
+                           "Please write the equation of the parabola if it has the x-intercept at -3 and 3. PLEASE WRITE THEM in terms of y",
+                           "Solve the x in exponetial equation of 3^(x-5) = 81",
+                           "Calculate the value of log 20 + log 5, leave this as a number."]
 
 # Junior quiz function
 def junior_quiz():
@@ -173,7 +290,7 @@ def junior_quiz():
   while junior_11 not in a_valid_solution():
     letter()
     junior_11 = input(question_list_juniorplus[0]).strip().lower()
-  if junior_11 == "b":
+  if junior_11 == "d":
     correct_point_hard()
   else:
     wrong_point()
@@ -310,12 +427,195 @@ def senior_division():
   while senior_2 not in a_valid_solution():
     letter()
     senior_2 = input(question_list_senior[1]).strip().lower()
-  if senior_2 == "a":
+  if senior_2 == "b":
     correct_point_easy()
   else:
     wrong_point()
+
+  senior_3 = input(question_list_senior[2]).strip().lower()
+  while not senior_3.isalpha():
+    explain()
+    senior_3 = input(question_list_senior[2]).strip().lower()
+  while senior_3 not in a_valid_solution():
+    letter()
+    senior_3 = input(question_list_senior[2]).strip().lower()
+  if senior_3 == "a":
+    correct_point_easy()
+  else:
+    wrong_point()
+
+  senior_4 = input(question_list_senior[3]).strip().lower()
+  while not senior_3.isalpha():
+    explain()
+    senior_4 = input(question_list_senior[3]).strip().lower()
+  while senior_3 not in a_valid_solution():
+    letter()
+    senior_4 = input(question_list_senior[3]).strip().lower()
+  if senior_4 == "c":
+    correct_point_easy()
+  else:
+    wrong_point()
+
+  senior_5 = input(question_list_senior[4]).strip().lower()
+  while not senior_5.isalpha():
+    explain()
+    senior_5 = input(question_list_senior[4]).strip().lower()
+  while senior_5 not in a_valid_solution():
+    letter()
+    senior_5 = input(question_list_senior[4]).strip().lower()
+  if senior_5 == "a":
+    correct_point_easy()
+  else:
+    wrong_point()
+
+  senior_6 = input(question_list_senior[5]).strip().lower()
+  while not senior_6.isalpha():
+    explain()
+    senior_6 = input(question_list_senior[5]).strip().lower()
+  while senior_3 not in a_valid_solution():
+    letter()
+    senior_6 = input(question_list_senior[5]).strip().lower()
+  if senior_6 == "a":
+    correct_point_easy()
+  else:
+    wrong_point()
+
+  senior_7 = input(question_list_senior[6]).strip().lower()
+  while not senior_7.isalpha():
+    explain()
+    senior_7 = input(question_list_senior[6]).strip().lower()
+  while senior_7 not in a_valid_solution():
+    letter()
+    senior_7 = input(question_list_senior[6]).strip().lower()
+  if senior_7 == "a":
+    correct_point_easy()
+  else:
+    wrong_point()
+
+  senior_8 = input(question_list_senior[7]).strip().lower()
+  while not senior_8.isalpha():
+    explain()
+    senior_8 = input(question_list_senior[7]).strip().lower()
+  while senior_8 not in a_valid_solution():
+    letter()
+    senior_8 = input(question_list_senior[7]).strip().lower()
+  if senior_8 == "c":
+    correct_point_easy()
+  else:
+    wrong_point()
+
+  senior_9 = input(question_list_senior[8]).strip().lower()
+  while not senior_9.isalpha():
+    explain()
+    senior_8 = input(question_list_senior[8]).strip().lower()
+  while senior_9 not in a_valid_solution():
+    letter()
+    senior_9 = input(question_list_senior[8]).strip().lower()
+  if senior_9 == "a":
+    correct_point_easy()
+  else:
+    wrong_point()
+
+  senior_10 = input(question_list_senior[9]).strip().lower()
+  while not senior_10.isalpha():
+    explain()
+    senior_10 = input(question_list_senior[9]).strip().lower()
+  while senior_9 not in a_valid_solution():
+    letter()
+    senior_10 = input(question_list_senior[9]).strip().lower()
+  if senior_10 == "a":
+    correct_point_easy()
+  else:
+    wrong_point()
+
+  # Now user needs to input an answer for this question
+  senior_11 = input(question_list_seniorplus[0],"You can either input in factorized or expand form").strip().lower()
+  if senior_11 in ["4(x-5)", "4x-20"]:
+    correct_point_hard()
+  else:
+    wrong_point()
+
+  senior_12 = input(question_list_seniorplus[1],"Please enter them in form of fraction: -a/(x+b)^2. Please ONLY ENTER THEM IN FACTORIZED FORM.").strip().lower()
+  if senior_12 == "-7/(x-2)^2":
+    correct_point_hard()
+  else:
+    wrong_point()
+
+  try:
+    senior_13 = input(question_list_seniorplus[2], "Please only enter them in numbers")
+    if senior_13 <= 0:
+      print("Do you expect the area under the curve to be 0 or a negative value? Please reenter the value!")
+      senior_13 = input(question_list_seniorplus[2], "Please only enter them in numbers")
+  except ValueError:
+    print("You have to enter the value in a number")
+    senior_13 = input(question_list_seniorplus[2], "Please only enter them in numbers")
+
+  senior_14 = input(question_list_seniorplus[3]).strip().lower()
+  if senior_14 == "min":
+    correct_point_hard()
+  while senior_14 not in ["max", "min"]:
+    print("Please only enter you value in max an min")
+    senior_14 = input(question_list_seniorplus[3]).strip().lower()
+  if senior_14 == "max":
+    wrong_point()
+
+  try:
+    senior_15 = input(question_list_seniorplus[4])
+    if senior_15 == "4":
+      correct_point_hard()
+    else:
+      wrong_point()
+  except ValueError:
+    print("The x-coordinate have to be a number")
+    senior_15 = input(question_list_seniorplus[4])
+
+  try:
+    senior_16 = input(question_list_seniorplus[5])
+    if senior_16 in ["3","-3"]:
+      correct_point_hard()
+    else:
+      wrong_point()
+  except ValueError:
+    print("The x-coordinate have to be a number")
+    senior_16 = input(question_list_seniorplus[5])
+
+  try:
+    senior_17 = input(question_list_seniorplus[6])
+    if senior_17 == "0.94":
+      correct_point_hard()
+    else:
+      wrong_point()
+  except ValueError:
+    print("The normal distribution have to be a number")
+    senior_17 = input(question_list_seniorplus[6])
+
+  senior_18 = input(question_list_seniorplus[7])
+  if senior_18 in ["x^2 - 9", "x^2-9","(x+3)(x-3)","(x+3) (x-3)"]:
+    correct_point_hard()
+  else:
+    wrong_point()
+
+  try:
+    senior_19 = input(question_list_seniorplus[8])
+    if senior_19 == "9":
+      correct_point_easy()
+    else:
+      wrong_point()
+  except ValueError:
+    print("The x value have to be a number")
+    senior_19 = input(question_list_seniorplus[8])
+
+  try:
+    senior_20 = int(input(question_list_seniorplus[9]))
+    if senior_20 == 1:
+      correct_point_easy
+    else:
+      wrong_point()
+  except ValueError:
+    print("The sum of this logarithum is a whole number, please reenter iter")
+    senior_20 = int(input(question_list_seniorplus[9]))
     
-  senior_quizbank = ["senior_1","senior_2","senior_3","senior_4","senior_5","senior_6","senior_7","senior_8","senior_9","senior_10","senior_11","senior_12","senior_13","senior_14","senior_15","senior_16","senior_17","senior_18","senior_19","senior_20"]
+  senior_quizbank = [senior_1,senior_2,senior_3,senior_4,senior_5,senior_6,senior_7,senior_8,senior_9,senior_10,senior_11,senior_12,senior_13,senior_14,senior_15,senior_16,senior_17,senior_18,senior_19,senior_20]
 
 # Asking for their age to then allocate them into different division.
 try:
@@ -324,7 +624,10 @@ except ValueError:
   print("You are not enter a value number")
   age = int(input("How old are you?"))
 
-if age < 10:
+while age < 0:
+  print("How is it possible for you to be below 0 years old? Please reenter your age")
+  age = int(input("How old are you?"))
+if 0 < age < 10:
   print("This might be too difficult for you")
   continue_ = input("Do you want to continue? Please answer in y/n").strip().lower()
   if continue_ == "n":
@@ -342,115 +645,7 @@ elif 15 <= age <= 18:
 elif age > 18:
   print("You are too old to attend this quiz")
   exit()
-  
-# The quizs
-  # Simple questions, only worth one marks
-question_list_junior = ["What is 3 * 5 + 4? a)32 b)27 c)19 d)23", #1
-                       "What is the sum of angle in a triangle? a)180 b)90 c)270 d)360?", #2
-                       """Which of the following statement is correct? 
-                   a)Angles in a square sum to 360 degrees
-                   b)Angles in a circle sum to 180 degrees
-                   c)Vertically opposite angles sum to 180 degrees
-                   d)Shapes with two side are called a triangle""", #3
-                       "What is 10 squared? a)10 b)20 c)1 d)100", #4
-                       """Which of them is first in calculations?
-                   a)Multiplication and Division
-                   b)Addition and Subtraction""", #5
-                       "What is the longest side in a right angle triangle? a)adjacent b)hypotenuse c)opposite d)I am not sure", #6
-                       "What is the highest power in a linear function? a)1 b)2 c)3 d)4", # 7
-                       "What is square root of 4? a)2 b)4 c)-2 d)-4", # 8
-                       "What is sine 30 degrees? a)0.5 b)1 c)sqrt(2)/3 d)0", # 9
-                       """What is the definition of sine?
-                    a)Opposite side over adjacent side
-                    b)Opposite side over hypotenuse side
-                    c)adjacent side over hypotenuse side
-                    d)adjacent side over the opposite side"""] #10
 
-question_list_senior = ["""What is the FORMAL definition of ellipse?
-                        a)It has the same distance towards two focus from a certain point
-                        b)The sum of the distance among two focus is 2a
-                        c)The sum of the two focus is 2a
-                        d)It has the same distance between two focus towards the center""",
-                        """What is the FORMAL definition of parabola?
-                        a)The distance between its focus and directrix toward the vertex is the same
-                        b)The distance from a fixed point have the same distance towards the focus and directrix.
-                        c)Vertex have to located at the origin
-                        d)If the equation is y^2 = 4ax and the vertex is located on the center, the focus is located on (2a,0) and (-2a,0)""",
-                        "What is the first deriative of function f(x)=2x^2? a)4x b)2x c)2x^2 d)4",
-                        """If we are taking the deriative of a fraction, which method shall we apply?
-                        a)Chain Rule
-                        b)Product Rule
-                        c)Quotient Rule
-                        d)Number Rule""",
-                        """If we are taking the deriative of a composite function, which method shall we apply?
-                        a)Chain Rule
-                        b)Product Rule
-                        c)Quotient Rule
-                        d)Number Rule""",
-                       """What is a method we can use to calculate the equation of tangent line to a circle?
-                        a)Implict differentation
-                        b)Partial differentation
-                        c)Algebraic differentation
-                        d)Integration""",
-                       """if z = a+bi, what is the value of z^2 if a = 2 and b = 1?
-                       a)3+4i
-                       b)4+3i
-                       c)4-3i
-                       d)3-4i""",
-                       """What is sin(x+y)?
-                       a)sin(x)cos(y)-cos(x)sin(y)
-                       b)sin(x)sin(y)+cos(x)cos(y)
-                       c)sin(x)cos(y)+cos(x)sin(y)
-                       d)sin(x)sin(y)-cos(x)cos(y)""",
-                       """What is In(-1)? Plese give in a complex solution
-                       a)i(pi)
-                       b)-i
-                       c)-i(pi)
-                       d)ei"""]
-                        
-                        
-                        
-
-# Those part of questions have a higher difficulties than the other question.
-question_list_juniorplus = ["""What is a unit circle?
-                             a)Circle with a circumfenrence of 1
-                             b)Circle with a radius of 1
-                             c)Circle with a center at the origin
-                             d)Circle with no radius""",
-                            "How many degrees is in pi? a)180 b)360 c)90 d)0",
-                            """Solve for x is x^2 = -4?
-                            a)-2 b)No real solution c)2 d)2""",
-                            """What is the formal definition of circle?
-                           a)The shape that has the same distance between its circumference and center
-                           b)A shape that has 360 degrees
-                           c)A roundy shape
-                           d)A shape that has the same distance between its focus and directrix.""",
-                           """What is the same as x square root?
-                           a)x to the power of 1/2
-                           b)x to the power of 1/3
-                           c)x to the power of 2
-                           d)x to the power of -1""",
-                           "What is the tangent 90 degrees? a)0 b)1 c)-1 d)Not Exist",
-                           "What is log 10? a)1 b)0 c)10 d)-1",
-                           "What is In e? a)1 b)0 c)10 d)-1",
-                           """What is m mean in a linear equation of y = mx+c?
-                           a)Gradient
-                           b)Y-intercept
-                           c)X-intercept
-                           d)Rise/Run""",
-                           "What is the gradient of line y = x+3 a)1 b)2 c)3 d)-1"]
-
-# This need an input
-question_list_seniorplus = ["Calculate the deriative of 2(x-5)^2",
-                           "Calculate the deriative of (x^2 - 3) / x+5",
-                           "Calculate the integral from 0 to 1, 2x dx",
-                           "Is f(x) = 12x + x^2 a maximum or a minimum? Please enter your value in max or min",
-                           "Calculate the value of the X-COORDINATE of the focus in the equation of parabola y^2 = 8x",
-                           "Calculate the vertex of the hyperbola in the equation 4x^2 - 9y^2 = 36. You just need to have one answer",
-                           "If Z = 1.56, calculate the value of p(x) in the normal distribution",
-                           "Please write the equation of the parabola if it has the x-intercept at -3 and 3. PLEASE WRITE THEM in terms of y",
-                           "Solve the x in exponetial equation of 3^(x-5) = 81",
-                           "Calculate the value of log 20 + log 5, leave this as a number."]
                     
 
   
