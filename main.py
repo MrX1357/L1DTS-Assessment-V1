@@ -47,8 +47,9 @@ def wrong_point():
   global point
   point += 0
 # This is the only possible question in question that involves choice.
-def a_valid_solution():
-  ["a","b","c","d"]
+def a_valid_solution(choice_1,choice_2,choice_3,choice_4):
+  [choice_1, choice_2, choice_3, choice_4]
+a_valid_solution(choice_1 = "a", choice_2 = "b", choice_3 = "c", choice_4 = "d")
 
 # The questions
   # Simple questions, only worth one marks
@@ -162,28 +163,30 @@ question_list_seniorplus = ["Calculate the deriative of 2(x-5)^2",
                            "Calculate the value of log 20 + log 5, leave this as a number."]
 
 # Junior quiz function
-def junior_quiz():
+
+junior_1 = input(question_list_junior[0]).strip().lower()
+while not junior_1.isalpha():
+  explain()
   junior_1 = input(question_list_junior[0]).strip().lower()
-  while not junior_1.isalpha():
-    explain()
-  while junior_1 not in a_valid_solution():
-    letter()
-  if junior_1 == "c":
-    correct_point_easy()
-  else:
-    correct_point_hard()
+while junior_1 not in ["a","b","c","d"]:
+  letter()
+  junior_1 = input(question_list_junior[0]).strip().lower()
+if junior_1 == "c":
+  correct_point_easy()
+else:
+  correct_point_hard()
     
+junior_2 = input(question_list_junior[1]).strip().lower()
+while not junior_2.isalpha():
+  explain()
   junior_2 = input(question_list_junior[1]).strip().lower()
-  while not junior_2.isalpha():
-    explain()
-    junior_2 = input(question_list_junior[1]).strip().lower()
-  while junior_2 not in a_valid_solution():
-    letter()
-    junior_2 = input(question_list_junior[1]).strip().lower()
-  if junior_2 == "a":
-    correct_point_easy()
-  else:
-    wrong_point()
+while junior_2 not in ["a","b","c","d"]:
+  letter()
+  junior_2 = input(question_list_junior[1]).strip().lower()
+if junior_2 == "a":
+  correct_point_easy()
+else:
+  wrong_point()
     
   junior_3 = input(question_list_junior[2]).strip().lower()
   while not junior_3.isalpha():
@@ -404,7 +407,7 @@ def junior_quiz():
     wrong_point()
 
 #Quizbank in junior division that is going to be given to the user.
-  junior_quizbank =       [junior_1,junior_2,junior_3,junior_4,junior_5,junior_6,junior_7,junior_8,junior_9,junior_10,junior_11,junior_12,junior_13,junior_14,junior_15,junior_16,junior_17,junior_18,junior_19,junior_20]
+junior_quizbank =       [junior_1,junior_2,junior_3,junior_4,junior_5,junior_6,junior_7,junior_8,junior_9,junior_10,junior_11,junior_12,junior_13,junior_14,junior_15,junior_16,junior_17,junior_18,junior_19,junior_20]
 
 # Question in senior division
 def senior_division():
@@ -637,9 +640,10 @@ if 0 < age < 10:
     continue_ = input("Do you want to continue? Please answer in y/n")
   elif continue_ == "y":
     print("Enjoy your game!")
+    junior_quizbank.remove()
 elif 10 <= age <= 14:
   print("You are in junior division!")
-  junior_quiz()
+  random.choice(junior_quizbank)
 elif 15 <= age <= 18:
   print("You are in senior division!")
 elif age > 18:
