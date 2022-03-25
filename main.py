@@ -46,10 +46,6 @@ def correct_point_hard():
 def wrong_point():
   global point
   point += 0
-# This is the only possible question in question that involves choice.
-def a_valid_solution(choice_1,choice_2,choice_3,choice_4):
-  [choice_1, choice_2, choice_3, choice_4]
-a_valid_solution(choice_1 = "a", choice_2 = "b", choice_3 = "c", choice_4 = "d")
 
 # The questions
   # Simple questions, only worth one marks
@@ -163,36 +159,36 @@ question_list_seniorplus = ["Calculate the deriative of 2(x-5)^2",
                            "Calculate the value of log 20 + log 5, leave this as a number."]
 
 # Junior quiz function
-
-junior_1 = input(question_list_junior[0]).strip().lower()
-while not junior_1.isalpha():
-  explain()
-  junior_1 = input(question_list_junior[0]).strip().lower()
-while junior_1 not in ["a","b","c","d"]:
-  letter()
-  junior_1 = input(question_list_junior[0]).strip().lower()
-if junior_1 == "c":
-  correct_point_easy()
-else:
-  correct_point_hard()
+def junior_quizbank():
+  junior_1 = input(question_list_junior[0])
+  while not junior_1.isalpha():
+    explain()
+    junior_1 = input(question_list_junior[0]).strip().lower()
+  while junior_1 not in ["a","b","c","d"]:
+    letter()
+    junior_1 = input(question_list_junior[0]).strip().lower()
+  if junior_1 == "c":
+    correct_point_easy()
+  else:
+    correct_point_hard()
     
-junior_2 = input(question_list_junior[1]).strip().lower()
-while not junior_2.isalpha():
-  explain()
-  junior_2 = input(question_list_junior[1]).strip().lower()
-while junior_2 not in ["a","b","c","d"]:
-  letter()
-  junior_2 = input(question_list_junior[1]).strip().lower()
-if junior_2 == "a":
-  correct_point_easy()
-else:
-  wrong_point()
+  junior_2 = input(question_list_junior[1])
+  while not junior_2.isalpha():
+    explain()
+    junior_2 = input(question_list_junior[1]).strip().lower()
+  while junior_2 not in ["a","b","c","d"]:
+    letter()
+    junior_2 = input(question_list_junior[1]).strip().lower()
+  if junior_2 == "a":
+    correct_point_easy()
+  else:
+    wrong_point()
     
   junior_3 = input(question_list_junior[2]).strip().lower()
   while not junior_3.isalpha():
     explain()
     junior_3 = input(question_list_junior[2]).strip().lower()
-  while junior_3 not in a_valid_solution():
+  while junior_3 not in ["a","b","c","d"]:
     letter()
     junior_3 = input(question_list_junior[2]).strip().lower()
   if junior_3 == "a":
@@ -205,7 +201,7 @@ else:
   while not junior_4.isalpha():
     explain()
     junior_4 = input(question_list_junior[3]).strip().lower()
-  while junior_4 not in a_valid_solution():
+  while junior_4 not in ["a","b","c","d"]:
     letter()
     junior_4 = input(question_list_junior[3]).strip().lower()
   if junior_4 == "d":
@@ -217,7 +213,7 @@ else:
   while not junior_5.isalpha():
     explain()
     junior_5 = input(question_list_junior[4]).strip().lower()
-  while junior_5 not in a_valid_solution():
+  while junior_5 not in ["a","b","c","d"]:
     letter()
     junior_5 = input(question_list_junior[4]).strip().lower()
   if junior_5 == "b":
@@ -229,7 +225,7 @@ else:
   while not junior_6.isalpha():
     explain()
     junior_6 = input(question_list_junior[5])
-  while junior_6 not in a_valid_solution():
+  while junior_6 not in ["a","b","c","d"]:
     letter()
     junior_6 = input(question_list_junior[5]).strip().letter()
   if junior_6 == "b":
@@ -241,7 +237,7 @@ else:
   while not junior_7.isalpha():
     explain()
     junior_7 = input(question_list_junior[6]).strip().lower()
-  while junior_7 not in a_valid_solution():
+  while junior_7 not in ["a","b","c","d"]:
     letter()
     junior_7 = input(question_list_junior[6]).strip().lower()
   if junior_7 == "a":
@@ -253,7 +249,7 @@ else:
   while not junior_8.isalpha():
     explain()
     junior_8 = input(question_list_junior[7]).strip().lower()
-  while junior_8 not in a_valid_solution():
+  while junior_8 not in ["a","b","c","d"]:
     letter()
     junior_8 = input(question_list_junior[7]).strip().lower()
   # There are two correct answers in this choice
@@ -266,7 +262,7 @@ else:
   while not junior_9.isalpha():
     explain()
     junior_9 = input(question_list_junior[8]).strip().lower()
-  while junior_9 not in a_valid_solution():
+  while junior_9 not in ["a","b","c","d"]:
     letter()
     junior_9 = input(question_list_junior[8]).strip().lower()
   if junior_9 == "a":
@@ -278,7 +274,7 @@ else:
   while not junior_10.isalpha():
     explain()
     junior_10 = input(question_list_junior[9]).strip().lower()
-  while junior_10 not in a_valid_solution():
+  while junior_10 not in ["a","b","c","d"]:
     letter()
     junior_10 = input(question_list_junior[9]).strip().lower()
   if junior_10 == "b":
@@ -286,11 +282,11 @@ else:
   else:
     wrong_point()
 # Now the question is getting harder and is now worth two points
-  junior_11 = input(question_list_juniorplus[0]).strip().lower()
+  junior_11 = question_list_juniorplus[0]
   while not junior_11.isalpha():
     explain()
-    junior_11 = input(question_list_juniorplus[0]).strip().lower()
-  while junior_11 not in a_valid_solution():
+    junior_11 = question_list_juniorplus[0]
+  while junior_11 not in ["a","b","c","d"]:
     letter()
     junior_11 = input(question_list_juniorplus[0]).strip().lower()
   if junior_11 == "d":
@@ -302,7 +298,7 @@ else:
   while not junior_12.isalpha():
     explain()
     junior_12 = input(question_list_juniorplus[1]).strip().lower()
-  while junior_12 not in a_valid_solution():
+  while junior_12 not in ["a","b","c","d"]:
     letter()
     junior_12 = input(question_list_juniorplus[1]).strip().lower()
   if junior_12 == "a":
@@ -314,7 +310,7 @@ else:
   while not junior_13.isalpha():
     explain()
     junior_13 = input(question_list_juniorplus[2]).strip().lower()
-  while junior_13 not in a_valid_solution():
+  while junior_13 not in ["a","b","c","d"]:
     letter()
     junior_13 = input(question_list_juniorplus[2]).strip().lower()
   if junior_13 == "b":
@@ -326,7 +322,7 @@ else:
   while not junior_14.isalpha():
     explain()
     junior_14 = input(question_list_juniorplus[3]).strip().lower()
-  while junior_14 not in a_valid_solution():
+  while junior_14 not in ["a","b","c","d"]:
     letter()
     junior_14 = input(question_list_juniorplus[3]).strip().lower()
   if junior_14 == "a":
@@ -338,7 +334,7 @@ else:
   while not junior_15.isalpha():
     explain()
     junior_15 = input(question_list_juniorplus[4]).strip().lower()
-  while junior_15 not in a_valid_solution():
+  while junior_15 not in ["a","b","c","d"]:
     letter()
     junior_15 = input(question_list_juniorplus[4]).strip().lower()
   if junior_15 == "a":
@@ -350,7 +346,7 @@ else:
   while not junior_16.isalpha():
     explain()
     junior_16 = input(question_list_juniorplus[5]).strip().lower()
-  while junior_16 not in a_valid_solution():
+  while junior_16 not in ["a","b","c","d"]:
     letter()
     junior_16 = input(question_list_juniorplus[5]).strip().lower()
   if junior_16 == "d":
@@ -362,7 +358,7 @@ else:
   while not junior_17.isalpha():
     explain()
     junior_17 = input(question_list_juniorplus[6]).strip().lower()
-  while junior_17 not in a_valid_solution():
+  while junior_17 not in ["a","b","c","d"]:
     letter()
     junior_17 = input(question_list_juniorplus[6]).strip().lower()
   if junior_17 == "a":
@@ -374,7 +370,7 @@ else:
   while not junior_18.isalpha():
     explain()
     junior_18 = input(question_list_juniorplus[7]).strip().lower()
-  while junior_18 not in a_valid_solution():
+  while junior_18 not in ["a","b","c","d"]:
     letter()
     junior_18 = input(question_list_juniorplus[7]).strip().lower()
   if junior_18 == "a":
@@ -386,7 +382,7 @@ else:
   while not junior_19.isalpha():
     explain()
     junior_19 = input(question_list_juniorplus[8]).strip().lower()
-  while junior_19 not in a_valid_solution():
+  while junior_19 not in ["a","b","c","d"]:
     letter()
     junior_19 = input(question_list_juniorplus[8]).strip().lower()
   if junior_19 == "a":
@@ -398,7 +394,7 @@ else:
   while not junior_20.isalpha():
     explain()
     junior_20 = input(question_list_juniorplus[9]).strip().lower()
-  while junior_20 not in a_valid_solution():
+  while junior_20 not in ["a","b","c","d"]:
     letter()
     junior_20 = input(question_list_juniorplus[9]).strip().lower()
   if junior_20 == "a":
@@ -407,7 +403,7 @@ else:
     wrong_point()
 
 #Quizbank in junior division that is going to be given to the user.
-junior_quizbank =       [junior_1,junior_2,junior_3,junior_4,junior_5,junior_6,junior_7,junior_8,junior_9,junior_10,junior_11,junior_12,junior_13,junior_14,junior_15,junior_16,junior_17,junior_18,junior_19,junior_20]
+  junior_quizbank =       [junior_1,junior_2,junior_3,junior_4,junior_5,junior_6,junior_7,junior_8,junior_9,junior_10,junior_11,junior_12,junior_13,junior_14,junior_15,junior_16,junior_17,junior_18,junior_19,junior_20]
 
 # Question in senior division
 def senior_division():
@@ -415,7 +411,7 @@ def senior_division():
   while not senior_1.isalpha():
     explain()
     senior_1 = input(question_list_senior[0]).strip().lower()
-  while senior_1 not in a_valid_solution():
+  while senior_1 not in ["a","b","c","d"]:
     letter()
     senior_1 = input(question_list_senior[0]).strip().lower()
   if senior_1 == "a":
@@ -427,7 +423,7 @@ def senior_division():
   while not senior_2.isalpha():
     explain()
     senior_2 = input(question_list_senior[1]).strip().lower()
-  while senior_2 not in a_valid_solution():
+  while senior_2 not in ["a","b","c","d"]:
     letter()
     senior_2 = input(question_list_senior[1]).strip().lower()
   if senior_2 == "b":
@@ -439,7 +435,7 @@ def senior_division():
   while not senior_3.isalpha():
     explain()
     senior_3 = input(question_list_senior[2]).strip().lower()
-  while senior_3 not in a_valid_solution():
+  while senior_3 not in ["a","b","c","d"]:
     letter()
     senior_3 = input(question_list_senior[2]).strip().lower()
   if senior_3 == "a":
@@ -451,7 +447,7 @@ def senior_division():
   while not senior_3.isalpha():
     explain()
     senior_4 = input(question_list_senior[3]).strip().lower()
-  while senior_3 not in a_valid_solution():
+  while senior_3 not in ["a","b","c","d"]:
     letter()
     senior_4 = input(question_list_senior[3]).strip().lower()
   if senior_4 == "c":
@@ -463,7 +459,7 @@ def senior_division():
   while not senior_5.isalpha():
     explain()
     senior_5 = input(question_list_senior[4]).strip().lower()
-  while senior_5 not in a_valid_solution():
+  while senior_5 not in ["a","b","c","d"]:
     letter()
     senior_5 = input(question_list_senior[4]).strip().lower()
   if senior_5 == "a":
@@ -475,7 +471,7 @@ def senior_division():
   while not senior_6.isalpha():
     explain()
     senior_6 = input(question_list_senior[5]).strip().lower()
-  while senior_3 not in a_valid_solution():
+  while senior_3 not in ["a","b","c","d"]:
     letter()
     senior_6 = input(question_list_senior[5]).strip().lower()
   if senior_6 == "a":
@@ -487,7 +483,7 @@ def senior_division():
   while not senior_7.isalpha():
     explain()
     senior_7 = input(question_list_senior[6]).strip().lower()
-  while senior_7 not in a_valid_solution():
+  while senior_7 not in ["a","b","c","d"]:
     letter()
     senior_7 = input(question_list_senior[6]).strip().lower()
   if senior_7 == "a":
@@ -499,7 +495,7 @@ def senior_division():
   while not senior_8.isalpha():
     explain()
     senior_8 = input(question_list_senior[7]).strip().lower()
-  while senior_8 not in a_valid_solution():
+  while senior_8 not in ["a","b","c","d"]:
     letter()
     senior_8 = input(question_list_senior[7]).strip().lower()
   if senior_8 == "c":
@@ -511,7 +507,7 @@ def senior_division():
   while not senior_9.isalpha():
     explain()
     senior_8 = input(question_list_senior[8]).strip().lower()
-  while senior_9 not in a_valid_solution():
+  while senior_9 not in ["a","b","c","d"]:
     letter()
     senior_9 = input(question_list_senior[8]).strip().lower()
   if senior_9 == "a":
@@ -523,7 +519,7 @@ def senior_division():
   while not senior_10.isalpha():
     explain()
     senior_10 = input(question_list_senior[9]).strip().lower()
-  while senior_9 not in a_valid_solution():
+  while senior_9 not in ["a","b","c","d"]:
     letter()
     senior_10 = input(question_list_senior[9]).strip().lower()
   if senior_10 == "a":
@@ -611,7 +607,7 @@ def senior_division():
   try:
     senior_20 = int(input(question_list_seniorplus[9]))
     if senior_20 == 1:
-      correct_point_easy
+      correct_point_easy()
     else:
       wrong_point()
   except ValueError:
@@ -627,9 +623,11 @@ except ValueError:
   print("You are not enter a value number")
   age = int(input("How old are you?"))
 
+# People cannot be under age of 0
 while age < 0:
   print("How is it possible for you to be below 0 years old? Please reenter your age")
   age = int(input("How old are you?"))
+# It is not recommended for people below 10 years ago to attend this quiz. However, if they still decided to attend, they will be allocated to junior division
 if 0 < age < 10:
   print("This might be too difficult for you")
   continue_ = input("Do you want to continue? Please answer in y/n").strip().lower()
@@ -640,12 +638,18 @@ if 0 < age < 10:
     continue_ = input("Do you want to continue? Please answer in y/n")
   elif continue_ == "y":
     print("Enjoy your game!")
-    junior_quizbank.remove()
+# Age between 10 and 14 years old will be allocate towards the junior division
 elif 10 <= age <= 14:
   print("You are in junior division!")
-  random.choice(junior_quizbank)
+  timing = 0
+  for timing in range(0,16):
+    junior_input = input(random.choice(junior_quizbank))
+    junior_quizbank.remove(junior_input)
+    timing = timing + 1
+# Age between 15 and 18 years old will be allocate toward the senior division
 elif 15 <= age <= 18:
   print("You are in senior division!")
+# People over 18 years old cannot attend this quiz since they are too old.
 elif age > 18:
   print("You are too old to attend this quiz")
   exit()
